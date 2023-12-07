@@ -1,0 +1,108 @@
+Exercise 1:
+a.
+magic_matrix = magic(6)
+fourth_row = magic_matrix(4, :);
+disp('Fourth Row of Magic Matrix:');
+disp(fourth_row);
+b.
+x = [0:0.1:1.1];
+y = [10:21];
+
+result_multiply = x .* y;
+result_divide = y ./ x;
+
+disp('Result of x multiplied by y:');
+disp(result_multiply);
+disp('Result of y divided by x:');
+disp(result_divide);
+c.
+r = randi([-8, 9], 4, 5);
+disp('Random Matrix r (4x5):');
+disp(r);
+
+Exercise 2:
+x = pi/2:pi/10:2*pi;
+
+y = sin(x);
+z = cos(x);
+
+figure;
+plot(x, y, 'o-', 'LineWidth', 2, 'DisplayName', 'sin(x)');
+hold on;
+plot(x, z, 's-', 'LineWidth', 2, 'DisplayName', 'cos(x)');
+hold off;
+
+xlabel('x');
+ylabel('Function Value');
+title('Plot of sin(x) and cos(x)');
+legend('show');
+
+grid on;
+
+Exercise 1(1):
+coeff_p = [1, -3, 2];
+coeff_q = [1, 2, 1];
+
+product_poly = conv(coeff_p, coeff_q);
+disp('a. Product of p(s) and q(s):');
+disp(product_poly);
+
+roots_p = roots(coeff_p);
+roots_q = roots(coeff_q);
+disp('b. Roots of p(s):');
+disp(roots_p);
+disp('   Roots of q(s):');
+disp(roots_q);
+
+p_minus_1 = polyval(coeff_p, -1);
+q_minus_1 = polyval(coeff_q, -1);
+disp('c. p(-1):');
+disp(p_minus_1);
+disp('   q(-1):');
+disp(q_minus_1);
+
+Exercise 2(1):
+a.
+B_coeff = [2, 5, 3, 6];
+A_coeff = [1, 6, 11, 6];
+
+[R, P, K] = residue(B_coeff, A_coeff);
+disp('a. Partial Fraction Decomposition Coefficients:');
+disp('   Residues (R):');
+disp(R);
+disp('   Poles (P):');
+disp(P);
+disp('   Coefficients of the direct polynomial (K):');
+disp(K);
+b.
+
+B_coeff = [1, 2, 3];
+A_coeff = [1, 3, 3, 1];
+
+[R, P, K] = residue(B_coeff, A_coeff);
+disp('b. Partial Fraction Decomposition Coefficients:');
+disp('   Residues (R):');
+disp(R);
+disp('   Poles (P):');
+disp(P);
+disp('   Coefficients of the direct polynomial (K):');
+disp(K);
+
+
+Exercise 1 (2)
+p = 2.9;
+a = zeros(1, 100);
+a(1) = 0.5;
+
+for n = 1:99
+    a(n+1) = p * a(n) * (1 - a(n));
+end
+
+figure;
+plot(1:100, a, 'o-', 'LineWidth', 2);
+xlabel('n');
+ylabel('a(n)');
+title('Recursive Sequence: a(n+1) = p * a(n) * (1 - a(n))');
+grid on;
+
+
