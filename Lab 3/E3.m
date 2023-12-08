@@ -7,10 +7,10 @@ numerator = 3*s^2 + 5*s - 4;
 denominator = (s^2 - 7) * (s + 1);
 
 % Create the rational function
-R = numerator / denominator;
+rational_func = numerator / denominator;
 
 % Obtain the partial fraction decomposition
-partial_fraction = partfrac(R);
+partial_fraction = partfrac(rational_func);
 
 % Display the result
 disp(partial_fraction);
